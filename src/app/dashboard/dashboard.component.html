@@ -1,0 +1,9 @@
+<div class="container" *ngIf="afAuth.authState | async as user;">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <h2>Hello {{ user.displayName }}</h2>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

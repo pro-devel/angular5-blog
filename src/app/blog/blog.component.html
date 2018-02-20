@@ -1,3 +1,9 @@
-<p>
-  blog works!
-</p>
+<ul>
+    <div *ngFor="let course of blogObservable | async">
+            <h3><a href="#">{{course.title}}</a> </h3>
+            <p>{{course.description}}</p>
+            <div>
+                <a href="{{course.url}}" target="_blank" class="btn btn-danger">Go To Course</a>
+            </div>
+    </div>
+</ul>
