@@ -15,6 +15,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from './../environments/environment';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { FormsModule } from '@angular/forms'
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgbModule.forRoot(),
+    ToastModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
