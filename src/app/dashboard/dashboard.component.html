@@ -1,8 +1,8 @@
-<div class="container" *ngIf="afAuth.authState | async as user;">
+<div class="container">
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-8">
-			<ngb-tabset>
+			<ngb-tabset *ngIf="afAuth.authState | async as user; else showLogin">
 				<ngb-tab title="Home">
 					<ng-template ngbTabContent>
 						<h2>Hello {{ user.displayName }}</h2>
@@ -66,6 +66,9 @@
 					</ng-template>
 				</ngb-tab>
 			</ngb-tabset>
+			<ng-template #showLogin>
+				<p>Please Login First</p>
+			</ng-template>
 		</div>
 		<div class="col"></div>
 	</div>

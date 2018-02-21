@@ -21,10 +21,10 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <div *ngIf="afAuth.authState | async as user; else showLogin">
-      <img src="{{user.photoURL}}" height="49" width="49" [ngStyle]="{'margin-left': 10}" placement="bottom" ngbTooltip="{{user.displayName}}" class="rounded-circle">
-      <a href="/login"><button type="button" class="btn btn-primary">SignOut</button></a>
+      <a href="/dashboard"><img src="{{user.photoURL}}" height="49" width="49" [ngStyle]="{'margin-left': 10}" placement="bottom" ngbTooltip="{{user.displayName}}" class="rounded-circle"></a>
+      <button type="button"  (click)="logout()" class="btn btn-primary">SignOut</button>
     </div>
-    <ng-template #showLogin><a href="/login"><button type="button" class="btn btn-primary">SignIn</button></a></ng-template>
+    <ng-template #showLogin><button type="button" (click)="login()" class="btn btn-primary">SignIn</button></ng-template>
   </div>
 </nav>
 <router-outlet></router-outlet>
