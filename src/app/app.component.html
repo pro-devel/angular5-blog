@@ -20,7 +20,11 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <a href="/login"><button type="button" class="btn btn-primary">SignIn</button></a>
+    <div *ngIf="afAuth.authState | async as user; else showLogin">
+      <img src="{{user.photoURL}}" height="49" width="49" [ngStyle]="{'margin-left': 10}" placement="bottom" ngbTooltip="{{user.displayName}}" class="rounded-circle">
+      <a href="/login"><button type="button" class="btn btn-primary">SignOut</button></a>
+    </div>
+    <ng-template #showLogin><a href="/login"><button type="button" class="btn btn-primary">SignIn</button></a></ng-template>
   </div>
 </nav>
 <router-outlet></router-outlet>

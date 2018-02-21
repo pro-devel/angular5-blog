@@ -46,9 +46,9 @@ export class DashboardComponent implements OnInit {
     this.blogService.selectedBlog = {
       $key: null,
       name: '',
-      position: '',
-      office: '',
-      salary: 0,
+      image: '',
+      label: '',
+      content: '',
     }
   }
   onEdit(emp: Blog) {

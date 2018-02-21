@@ -13,7 +13,7 @@ export class BlogComponent implements OnInit {
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
-  	this.blogObservable = this.getBlog('/courses')
+  	this.blogObservable = this.getBlog('/posts')
   }
 
   getBlog(listPath): Observable<any[]> {

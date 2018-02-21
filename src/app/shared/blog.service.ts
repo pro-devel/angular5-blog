@@ -9,7 +9,7 @@ export class BlogService {
   constructor(private firebase :AngularFireDatabase ) { }
 
   getData(){
-    this.blogList = this.firebase.list('courses');
+    this.blogList = this.firebase.list('posts');
     return this.blogList;
   }
 
@@ -17,20 +17,21 @@ export class BlogService {
   {
     this.getData().push({
       name: blog.name,
-      position: blog.position,
-      office: blog.office,
-      salary: blog.salary
+      image: blog.image,
+      label: blog.label,
+      content: blog.content
+
     });
   }
 
   updateBlog(blog : Blog){
     this.getData().update(blog.$key,
-      {
-        name: blog.name,
-        position: blog.position,
-        office: blog.office,
-        salary: blog.salary
-      });
+    {
+      name: blog.name,
+      image: blog.image,
+      label: blog.label,
+      content: blog.content
+    });
   }
 
   deleteBlog($key : string){

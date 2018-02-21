@@ -18,20 +18,21 @@
 								<input class="form-control" name="name" #name="ngModel" [(ngModel)]="blogService.selectedBlog.name" placeholder="Full Name" required>
 							</div>
 							<div class="form-group">
-								<label>Position</label>
-								<input class="form-control" name="position" #position="ngModel" [(ngModel)]="blogService.selectedBlog.position" placeholder="Position">
+								<label>Image</label>
+								<input class="form-control" name="image" #image="ngModel" [(ngModel)]="blogService.selectedBlog.image" placeholder="Image">
 							</div>
 							<div class="form-group">
-								<label>Office</label>
-								<input class="form-control" name="office" #office="ngModel" [(ngModel)]="blogService.selectedBlog.office" placeholder="Office">
+								<label>Label</label>
+								<input class="form-control" name="label" #label="ngModel" [(ngModel)]="blogService.selectedBlog.label" placeholder="Label">
 							</div>
 							<div class="form-group">
-								<label>Salary</label>
+								<label>Content</label>
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fas fa-dollar"></i>
 									</div>
-									<input class="form-control" name="salary" #salary="ngModel" [(ngModel)]="blogService.selectedBlog.salary" placeholder="Salary">
+									<textarea class="form-control" name="content" #content="ngModel" [(ngModel)]="blogService.selectedBlog.content" placeholder="Content">
+									</textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -47,11 +48,11 @@
 				</ngb-tab>
 				<ngb-tab title="Update">
 					<ng-template ngbTabContent>
-						<h6 class="text-center">Employee Register</h6><br/>
+						<h6 class="text-center">Blog Articles</h6><br/>
 						<table class="table table-sm table-hover">
 							<tr *ngFor="let blog of blogList">
 								<td>{{blog.name}}</td>
-								<td>{{blog.position}}</td>
+								<td>{{blog.label}}</td>
 								<td>
 									<a class="btn" (click)="onEdit(blog)">
 										Edit
