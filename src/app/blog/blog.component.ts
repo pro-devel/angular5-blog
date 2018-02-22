@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class BlogComponent implements OnInit {
 	blogObservable: Observable<any[]>;
-
+  
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {

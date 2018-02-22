@@ -1,9 +1,8 @@
 <ul>
 	<div *ngFor="let blog of blogObservable | async">
-		{{blog.title}}
-		<p>{{blog.label}}</p>
+		<p>{{blog.name}}</p>
 		<div>
-			<a [routerLink]="['/blog', blog.label , blog.name]" target="_blank" class="btn btn-danger">Go To Course</a>
+			<a [routerLink]="['/blog', blog.name]" target="_blank" class="btn btn-danger">Go To Course</a>
 		</div>
 	</div>
 </ul>

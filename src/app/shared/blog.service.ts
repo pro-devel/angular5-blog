@@ -10,6 +10,7 @@ export class BlogService {
 
   getData(){
     this.blogList = this.firebase.list('posts');
+    console.log(this.blogList);
     return this.blogList;
   }
 
@@ -37,5 +38,4 @@ export class BlogService {
   deleteBlog($key : string){
     this.getData().remove($key);
   }
-
 }
